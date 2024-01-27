@@ -1,7 +1,7 @@
 # Discord-Easy-Guild-Add-Member
 Discordのメンバー追加API、Guild Add MemberのシンプルなAPIラッパー  
 バックアップBot、メン爆Bot などに使えます  
-## このAPIラッパーを使用したバックアップBotを公開しています！
+## このAPIラッパーを使用したバックアップBotを公開してます！
 https://github.com/taka-4602/Discord-Backup-Bot
 ## 使ってみる (超シンプル！)
 #### use.py
