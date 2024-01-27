@@ -49,3 +49,5 @@ Incorporate this code into your Member-Backup Bot!
 ```EGAM.refresh```
 - Returns dict on success, status code in int on failure  
   ```400``` / User was deauthorized your app  
+### Example Bot is here -> [Discord-Backup-Bot](https://github.com/taka-4602/Discord-Backup-Bot)
+#### ( Sorry for not using English )
