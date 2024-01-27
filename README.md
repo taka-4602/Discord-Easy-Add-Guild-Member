@@ -26,7 +26,7 @@ Incorporate this code into your Member-Backup Bot!
 ### Know a little more
 ```EGAM.get_token```  
 - A dict is returned regardless of success or failure  
-  You can see the token, access token, and expiration date  
+  You can get access token, refresh token, and expiration date  
 
 ```EGAM.get_user```
 - It's return a dict, and you can find out a lot of user information with this  
