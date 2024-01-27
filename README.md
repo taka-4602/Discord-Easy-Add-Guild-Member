@@ -28,7 +28,7 @@ Incorporate this code into your Member-Backup Bot!
   You can see the token, access token, and expiration date  
 
 ```EGAM.get_user```
-- You can find out a lot of user information with dict.  
+- It's return a dict, and you can find out a lot of user information with this  
   ```
   {'id': '614025927877197834', 'username': '.taka.', 'avatar': '8057538b821aad2e5995cdaf5d94c173', 'discriminator': '0', 'public_flags': 4194560, 'premium_type': 2, 'flags': 4194560, 'banner': '05f76c61f15f5c073ef53c14c2528ff8', 'accent_color': 65573,
   'global_name': 'たか', 'avatar_decoration_data': {'asset': 'a_d3da36040163ee0f9176dfe7ced45cdc', 'sku_id': '1144058522808614923'}, 'banner_color': '#010025', 'mfa_enabled': False, 'locale': 'en-US'}
@@ -36,7 +36,7 @@ Incorporate this code into your Member-Backup Bot!
   
 ```EGAM.add_role```
 - HTTP response status codes is returned as an int  
-  Status 204 is looks like success, but it's failing
+  Status ```204``` is looks like success, but it's failing
 
 ```EGAM.add_member```
 - HTTP response status codes is returned as an int, same as add_role  
