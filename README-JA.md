@@ -6,14 +6,14 @@ https://github.com/taka-4602/Discord-Backup-Bot
 ## 使ってみる (超シンプル！)
 #### use.py
 ```python
-import EasyGuildAddMember
+from EGAM import EGAM
 
 token="Discord Botのトークン"
 cid="クライアントID"
 cse="クライアントシークレット"
 ruri="リダイレクト先"
 
-egam=EasyGuildAddMember.EGAM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)#proxyにプロキシを設定できます (proxy=dict)
+egam=EGAM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)#proxyにプロキシを設定できます (proxy=dict)
 
 print(egam.get_token("code"))#アクセストークン、リフレッシュトークンを取得する
 print(egam.get_user("access_token"))#トークンからユーザー情報を取得 (ユーザーID / ユーザーネーム など)
