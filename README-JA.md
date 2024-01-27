@@ -1,7 +1,7 @@
 # Discord-Easy-Guild-Add-Member
 Discordのメンバー追加API、Guild Add MemberのシンプルなAPIラッパー  
 バックアップBot、メン爆Bot などに使えます  
-## このAPIラッパーを使用したバックアップBotを公開してます！
+### このAPIラッパーを使用したバックアップBotを公開してます！
 https://github.com/taka-4602/Discord-Backup-Bot
 ## 使ってみる (超シンプル！)
 #### use.py
@@ -48,6 +48,6 @@ print(egam.refresh("refresh_token"))#リフレッシュトークンでトーク�
 ```EGAM.refresh```
 - 成功するとdict、失敗するとステータスコードがintで返されます  
   ```400``` / ユーザーがアプリケーション認証を切っている  
-### コンタクト
+## コンタクト
 サーバー / https://discord.gg/aSyaAK7Ktm  
 Discord / .taka.  
