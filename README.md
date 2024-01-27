@@ -37,7 +37,7 @@ Incorporate this code into your Member-Backup Bot!
   
 ```EGAM.add_role```
 - HTTP response status codes is returned as an int  
-  Status ```204``` is looks like success, but it's failing
+  ```204``` is success, other is failing
 
 ```EGAM.add_member```
 - HTTP response status codes is returned as an int, same as add_role  
