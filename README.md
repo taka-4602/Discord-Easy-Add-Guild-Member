@@ -1,6 +1,7 @@
 # Discord-Easy-Guild-Add-Member
 A simple API wrapper for Discord Guild Add Member  
 For Member-Boost Bot, Member-Backup Bot ( Yes, it's same as RestoreCord )  
+### >> ```pip install EGAM``` <<
 ### 日本語はこちら -> [README-JA](https://github.com/taka-4602/Discord-Easy-Guild-Add-Member/blob/main/README-JA.md)
 ## Try using it ! ( It's too simple, But it's does any good jobs ! )
 #### use.py
