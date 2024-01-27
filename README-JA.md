@@ -35,7 +35,7 @@ print(egam.refresh("refresh_token"))#リフレッシュトークンでトーク�
   ```
   
 ```EGAM.add_role```
-- リクエストのステータスコードがintで返されます  
+- HTTPのステータスコードがintで返されます  
   一見成功に見える204は失敗です
 
 ```EGAM.add_member```
