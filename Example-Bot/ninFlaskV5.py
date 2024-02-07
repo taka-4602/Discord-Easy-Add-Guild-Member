@@ -2,7 +2,7 @@ from threading import Thread
 from flask import Flask, request
 import json
 import v5path
-from EGAM import EGAM
+from EAGM import EAGM
 
 app = Flask("app")
 ipath=v5path.ipath
@@ -13,7 +13,7 @@ CLIENT_ID = v5path.CLIENT_ID
 CLIENT_SECRET = v5path.CLIENT_SECRET
 REDIRECT_URI = v5path.REDIRECT_URI
 
-egam=EGAM(bot_token=BOTTOKEN,client_id=CLIENT_ID,client_secret=CLIENT_SECRET,redirect_uri=REDIRECT_URI)
+eagm=eagm(bot_token=BOTTOKEN,client_id=CLIENT_ID,client_secret=CLIENT_SECRET,redirect_uri=REDIRECT_URI)
 
 @app.route('/', methods=["GET"])
 def index():
@@ -29,12 +29,12 @@ def index():
         except:
           return
         
-        gettoken= egam.get_token(code)
+        gettoken= eagm.get_token(code)
         token = gettoken['access_token']
-        getuser = egam.get_user(token)
+        getuser = eagm.get_user(token)
         user = getuser["id"]
         name = getuser["username"]
-        addrole=egam.add_role(user_id=user,guild_id=str(serverstate),role_id=str(rolestate))
+        addrole=eagm.add_role(user_id=user,guild_id=str(serverstate),role_id=str(rolestate))
         if not addrole==204:
           return f"<h1>ロールの付与に失敗しました<br>Botがロールを付与できる状態か確認してください<br>Botのロールが付与したいロールの1つ上に置かれていない場合や、管理権限に2段階認証が必要になっている場合ロールが付与できません！</h1>"
 

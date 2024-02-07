@@ -3,7 +3,7 @@ import json
 import asyncio
 from threading import Thread
 import v5path
-from EGAM import EGAM
+from EAGM import EAGM
 
 intents = discord.Intents.default()
 client = discord.Client(intents = intents)
@@ -12,7 +12,7 @@ tree = discord.app_commands.CommandTree(client)
 ipath=v5path.ipath
 ipath2=v5path.ipath2
 BOTTOKEN=v5path.BOTTOKEN
-egam=EGAM(bot_token=BOTTOKEN)
+eagm=eagm(bot_token=BOTTOKEN)
 
 @client.event
 async def on_ready():
@@ -34,7 +34,7 @@ async def call(interaction: discord.Interaction,データサーバーid:str=None
             userid = json.load(useridj)
             a=b=c=d=e=f=0
             for key, value in list(userid.items()):
-                addmember=egam.add_member(access_token=zendata[key],user_id=key,guild_id=str(interaction.guild.id))
+                addmember=eagm.add_member(access_token=zendata[key],user_id=key,guild_id=str(interaction.guild.id))
                 if addmember==201:
                     a=a+1
                 elif addmember==204:

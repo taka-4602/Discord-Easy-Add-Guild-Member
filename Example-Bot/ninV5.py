@@ -4,7 +4,7 @@ import time
 from ninFlaskV5 import start
 from call import callstart
 import v5path
-from EGAM import EGAM
+from EAGM import EAGM
 
 intents = discord.Intents.default()
 client = discord.Client(intents = intents)
@@ -14,7 +14,7 @@ ipath=v5path.ipath
 ipath2=v5path.ipath2
 BOTTOKEN=v5path.BOTTOKEN
 authurl=v5path.authurl
-egam=EGAM(bot_token=BOTTOKEN)
+eagm=EAGM(bot_token=BOTTOKEN)
 
 @client.event
 async def on_ready():
@@ -83,7 +83,7 @@ async def req1(interaction: discord.Interaction,ユーザーid:str):
             userid = json.load(useridj)
             try:
                 token=(userid[f"{ユーザーid}"])
-                addmember=egam.add_member(access_token=token,user_id=ユーザーid,guild_id=str(interaction.guild_id))
+                addmember=eagm.add_member(access_token=token,user_id=ユーザーid,guild_id=str(interaction.guild_id))
                 print(addmember)
                 if addmember==201:
                     await interaction.response.send_message("該当のユーザーを追加しました")   
