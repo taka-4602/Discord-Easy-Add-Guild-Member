@@ -16,15 +16,15 @@ ruri="リダイレクト先"
 
 eagm=EGAM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)#proxyにプロキシを設定できます (proxy=dict)
 
-print(egam.get_token("code"))#アクセストークン、リフレッシュトークンを取得する
-print(egam.get_user("access_token"))#トークンからユーザー情報を取得 (ユーザーID / ユーザーネーム など)
-print(egam.add_role(user_id="1234567890",guild_id="1234567890",role_id="1234567890"))#ユーザーにロールを付与
-print(egam.add_member(access_token="access_token",user_id="1234567890",guild_id="1234567890"))#ユーザーをサーバーに追加
-print(egam.refresh("refresh_token"))#リフレッシュトークンでトークンをリフレッシュする
+print(eagm.get_token("code"))#アクセストークン、リフレッシュトークンを取得する
+print(eagm.get_user("access_token"))#トークンからユーザー情報を取得 (ユーザーID / ユーザーネーム など)
+print(eagm.add_role(user_id="1234567890",guild_id="1234567890",role_id="1234567890"))#ユーザーにロールを付与
+print(eagm.add_member(access_token="access_token",user_id="1234567890",guild_id="1234567890"))#ユーザーをサーバーに追加
+print(eagm.refresh("refresh_token"))#リフレッシュトークンでトークンをリフレッシュする
 ```
 #コメントで書いてあることがすべてです、これがバックアップBotのコアのすべてということです  
 ### もう少し知る
-```EGAM.get_token```  
+```EAGM.get_token```  
 - 成功、失敗に関わらずdictが返されます  
   トークン、アクセストークン、有効期限がわかります  
 
