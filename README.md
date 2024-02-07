@@ -28,25 +28,25 @@ Incorporate this code into your Member-Backup Bot!
 - A dict is returned regardless of success or failure  
   You can get access token, refresh token, and expiration date  
 
-```EGAM.get_user```
+```EAGM.get_user```
 - It's return a dict, and you can find out a lot of user information with this  
   ```
   {'id': '614025927877197834', 'username': '.taka.', 'avatar': '8057538b821aad2e5995cdaf5d94c173', 'discriminator': '0', 'public_flags': 4194560, 'premium_type': 2, 'flags': 4194560, 'banner': '05f76c61f15f5c073ef53c14c2528ff8', 'accent_color': 65573,
   'global_name': 'たか', 'avatar_decoration_data': {'asset': 'a_d3da36040163ee0f9176dfe7ced45cdc', 'sku_id': '1144058522808614923'}, 'banner_color': '#010025', 'mfa_enabled': False, 'locale': 'en-US'}
   ```
   
-```EGAM.add_role```
+```EAGM.add_role```
 - HTTP response status codes is returned as an int  
   ```204``` is success, other is failing
 
-```EGAM.add_member```
+```EAGM.add_member```
 - HTTP response status codes is returned as an int, same as add_role  
   ```201``` / Success  
   ```204``` / User is already on that server   
   ```403``` / Access token is invalid  
   ```400``` / User's server limit
 
-```EGAM.refresh```
+```EAGM.refresh```
 - Returns dict on success, status code in int on failure  
   ```400``` / User was deauthorized your app  
 ### Example Bot is here -> [Discord-Backup-Bot](https://github.com/taka-4602/Discord-Backup-Bot)
