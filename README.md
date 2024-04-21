@@ -24,7 +24,7 @@ print(eagm.refresh("refresh_token"))#refresh OAuth2 AccessToken
 I wrote how to use it in the #comments, And it's all  
 Incorporate this code into your Member-Backup Bot!   
 ### Know a little more
-```EGAM.get_token```  
+```EAGM.get_token```  
 - A dict is returned regardless of success or failure  
   You can get access token, refresh token, and expiration date  
 
