@@ -4,7 +4,7 @@ For Member-Boost Bot, Member-Backup Bot ( Yes, it's same as RestoreCord )
 ### >> ```pip install EAGM``` <<
 ### 日本語はこちら -> [README-JA](https://github.com/taka-4602/Discord-Easy-Guild-Add-Member/blob/main/README-JA.md)
 ## Try using it ! ( It's too simple, But it does any good jobs ! )
-#### use.py
+#### example.py
 ```python
 from EAGM import EAGM
 
@@ -15,11 +15,18 @@ ruri="Redirect URI"
 
 eagm=EAGM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)#you can set any proxy (proxy=dict)
 
-print(eagm.get_token("code"))#get any tokens
-print(eagm.get_user("access_token"))#get user infomation (like user id / user name)
+eagm.get_token("code")#get any tokens
+print(eagm.access_token)
+print(eagm.refresh_token)
+eagm.get_user(eagm.access_token)#get user infomation (like user id / user name)
+print(eagm.user_id)
+print(eagm.username)
+print(eagm.avatar)
 print(eagm.add_role(user_id="1234567890",guild_id="1234567890",role_id="1234567890"))#add role to user
 print(eagm.add_member(access_token="access_token",user_id="1234567890",guild_id="1234567890"))#add user to guild
-print(eagm.refresh("refresh_token"))#refresh OAuth2 AccessToken
+eagm.refresh("refresh_token")#refresh OAuth2 AccessToken
+print(eagm.refreshed_access_token)
+print(eagm.refreshed_refresh_token)
 ```
 I wrote how to use it in the #comments, And it's all  
 Incorporate this code into your Member-Backup Bot!   
