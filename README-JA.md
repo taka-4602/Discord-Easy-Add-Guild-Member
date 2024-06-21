@@ -5,7 +5,7 @@ Discordのメンバー追加API、Add Guild MemberのシンプルなAPIラッパ
 ### このAPIラッパーを使用したバックアップBotを公開してます！
 https://github.com/taka-4602/Discord-Backup-Bot
 ## 使ってみる (超シンプル！)
-#### use.py
+#### example.py
 ```python
 from EAGM import EAGM
 
@@ -16,11 +16,18 @@ ruri="リダイレクト先"
 
 eagm=EGAM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)#proxyにプロキシを設定できます (proxy=dict)
 
-print(eagm.get_token("code"))#アクセストークン、リフレッシュトークンを取得する
-print(eagm.get_user("access_token"))#トークンからユーザー情報を取得 (ユーザーID / ユーザーネーム など)
+eagm.get_token("code")#アクセストークン、リフレッシュトークンを取得する
+print(eagm.access_token)
+print(eagm.refresh_token)
+eagm.get_user(eagm.access_token)#トークンからユーザー情報を取得 (ユーザーID / ユーザーネーム など)
+print(eagm.user_id)
+print(eagm.username)
+print(eagm.avatar)
 print(eagm.add_role(user_id="1234567890",guild_id="1234567890",role_id="1234567890"))#ユーザーにロールを付与
 print(eagm.add_member(access_token="access_token",user_id="1234567890",guild_id="1234567890"))#ユーザーをサーバーに追加
-print(eagm.refresh("refresh_token"))#リフレッシュトークンでトークンをリフレッシュする
+eagm.refresh("refresh_token")#リフレッシュトークンでトークンをリフレッシュする
+print(eagm.refreshed_access_token)
+print(eagm.refreshed_refresh_token)
 ```
 #コメントで書いてあることがすべてです、これがバックアップBotのコアのすべてということです  
 ### もう少し知る
