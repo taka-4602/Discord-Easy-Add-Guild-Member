@@ -16,12 +16,18 @@ class EAGM:
         data=self.data
         data["grant_type"]="authorization_code"
         data["code"]=code
-        gettoken = requests.post("https://discord.com/api/v10/oauth2/token", data=data, headers=headers,proxies=self.proxy)
-        return gettoken.json()
+        gettoken = requests.post("https://discord.com/api/v10/oauth2/token", data=data, headers=headers,proxies=self.proxy).json()
+        self.access_token=gettoken["access_token"]
+        self.refresh_token=gettoken["refresh_token"]
+        return gettoken
     
     def get_user(self,access_token:str) -> dict:
-        user = requests.get("https://discord.com/api/v10/users/@me", headers={"Authorization": f"Bearer {access_token}"},proxies=self.proxy)
-        return user.json()
+        user = requests.get("https://discord.com/api/v10/users/@me", headers={"Authorization": f"Bearer {access_token}"},proxies=self.proxy).json()
+        self.user_id=user["id"]
+        self.username=user["username"]
+        self.avatar=user["avatar"]
+        self.global_name=user["global_name"]
+        return user
 
     def refresh(self,refresh_token:str):
         data=self.data
@@ -30,6 +36,8 @@ class EAGM:
         refresh=requests.post("https://discord.com/api/v10/oauth2/token", data=data, headers=headers,proxies=self.proxy)
         if not refresh.status_code < 300:
             return refresh.status_code
+        self.refreshed_access_token=refresh.json()["access_token"]
+        self.refreshed_refresh_token=refresh.json()["refresh_token"]
         return refresh.json()
 
     def add_member(self,access_token:str,user_id:str,guild_id:str):
