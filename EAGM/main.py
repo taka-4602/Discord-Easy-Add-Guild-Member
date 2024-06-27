@@ -16,13 +16,13 @@ class EAGM:
         data=self.data
         data["grant_type"]="authorization_code"
         data["code"]=code
-        gettoken = requests.post("https://discord.com/api/v10/oauth2/token", data=data, headers=headers,proxies=self.proxy).json()
+        gettoken = requests.post("https://discord.com/api/oauth2/token", data=data, headers=headers,proxies=self.proxy).json()
         self.access_token=gettoken["access_token"]
         self.refresh_token=gettoken["refresh_token"]
         return gettoken
     
     def get_user(self,access_token:str) -> dict:
-        user = requests.get("https://discord.com/api/v10/users/@me", headers={"Authorization": f"Bearer {access_token}"},proxies=self.proxy).json()
+        user = requests.get("https://discord.com/api/users/@me", headers={"Authorization": f"Bearer {access_token}"},proxies=self.proxy).json()
         self.user_id=user["id"]
         self.username=user["username"]
         self.avatar=user["avatar"]
@@ -33,7 +33,7 @@ class EAGM:
         data=self.data
         data["grant_type"]="refresh_token"
         data["refresh_token"]=refresh_token
-        refresh=requests.post("https://discord.com/api/v10/oauth2/token", data=data, headers=headers,proxies=self.proxy)
+        refresh=requests.post("https://discord.com/api/oauth2/token", data=data, headers=headers,proxies=self.proxy)
         if not refresh.status_code < 300:
             return refresh.status_code
         self.refreshed_access_token=refresh.json()["access_token"]
